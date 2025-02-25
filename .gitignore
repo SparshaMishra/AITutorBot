@@ -8,3 +8,4 @@ models/
 *.db
 *.sqlite
 .rasa/cache/
+.DS_Store
