@@ -1,0 +1,117 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hello
+    - Hey bot
+    - What's up?
+    - Greetings!
+    - Good morning
+    - Good evening
+
+- intent: chapter_request
+  examples: |
+    - Tell me about Chapter [1](chapter)
+    - Start Chapter [3](chapter)
+    - Explain Chapter [4](chapter)
+    - What is Chapter [6](chapter) about?
+    - Describe Chapter [10](chapter)
+    - Teach me Chapter [2](chapter)
+
+- intent: topics_request
+  examples: |
+    - Show me the topics.
+    - List all topics for this chapter.
+    - Can you list the topics of this chapter?
+    - Give me the topics of this chapter.
+
+- intent: list_chapters
+  examples: |
+    - Show me the chapters
+    - List all chapters
+    - What chapters are available?
+    - Can you show me the available chapters?
+    - I want to see the chapters
+    - Give me a list of chapters
+
+- intent: next_topic
+  examples: |
+    - Next topic
+    - Go to the next topic
+    - Move to the next topic
+    - Continue with the next topic
+    - What is the next topic?
+    - next
+
+
+- intent: topic_explain
+  examples: |
+    - Explain [Physical Nature of Matter](topic)
+    - Can you describe [States of Matter](topic)?
+    - I want to learn more about [Characteristics of Particles of Matter](topic)
+    - Teach me about [Change of State of Matter](topic)
+    - Tell me about [Evaporation and Its Factors](topic)
+    - Explain [Types of Mixtures](topic)
+    - Describe [Separation of Mixtures](topic)
+    - What is [Properties of Solutions](topic)?
+    - More details on [Colloids and Suspensions](topic)
+    - Explain [Elements and Compounds](topic)
+    - What are [Atoms] and their properties?
+    - Tell me about [Molecules](topic)
+    - Explain [Laws of Chemical Combination](topic)
+    - Describe [Atomic Mass and Mole Concept](topic)
+    - I want to know more about [Chemical Formulae and Balancing Equations](topic)
+    - Can you explain [Discovery of the Cell](topic)?
+    - Tell me about [Cell Structure and Function](topic)
+    - Explain [Plant Tissues](topic)
+    - Describe [Animal Tissues](topic)
+    - More details on [Functions of Tissues](topic)
+    - Teach me about [Types of Motion](topic)
+    - Explain the topic [Graphical Representation of Motion](topic)
+    - What is [Acceleration](topic)?
+    - Tell me more about [Newton’s Law of Universal Gravitation](topic)
+    - Explain [Buoyancy and Archimedes’ Principle](topic)
+    - Describe [Electric Potential and Potential Difference](topic)
+    - Can you explain [Ohm’s Law](topic)?
+
+
+
+- intent: quiz_request
+  examples: |
+    - I want to take a quiz
+    - Start a quiz
+    - Can you quiz me?
+    - Test my knowledge
+    - Ask me some questions
+    - Begin quiz
+    - quiz
+
+- intent: quiz_answer
+  examples: |
+    - The answer is [a](quiz_answer)
+    - My choice is [b](quiz_answer)
+    - I think it's [c](quiz_answer)
+    - I choose [d](quiz_answer)
+    - I'm going with option [a](quiz_answer)
+    - My response is [b](quiz_answer)
+    - It should be [c](quiz_answer)
+    - The correct answer is [d](quiz_answer)
+    - [a](quiz_answer)
+    - [b](quiz_answer)
+    - [c](quiz_answer)
+    - [d](quiz_answer)
+
+- intent: goodbye
+  examples: |
+    - Bye
+    - Goodbye
+    - Take care
+    - See you next time
+
+- intent: fallback
+  examples: |
+    - I don’t understand.
+    - What are you talking about?
+    - Can you repeat that?

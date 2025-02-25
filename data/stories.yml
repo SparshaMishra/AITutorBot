@@ -1,0 +1,49 @@
+version: "3.1"
+
+stories:
+- story: explain_chapter
+  steps:
+  - intent: chapter_request
+  - action: action_explain_chapter
+  - slot_was_set:
+      - chapter
+  - action: utter_ask_next_action
+
+- story: explain_more_details
+  steps:
+  - intent: ask_question
+  - action: action_explain_topic
+  - slot_was_set:
+      - topic
+  - action: utter_ask_next_action
+
+- story: move_to_next_topic
+  steps:
+  - intent: next_topic
+  - action: action_explain_topic
+
+- story: explain_topic
+  steps:
+  - intent: topic_explain
+    entities:
+      - topic: "Physical Nature of Matter"
+  - action: action_explain_topic
+  - action: utter_ask_next_action
+
+- story: manage_quiz_flow
+  steps:
+  - intent: quiz_request
+  - action: action_manage_quiz
+  - slot_was_set:
+      - chapter
+
+- story: continue_quiz
+  steps:
+  - intent: quiz_answer
+  - action: action_manage_quiz
+
+- story: complete_quiz
+  steps:
+  - intent: deny
+  - action: utter_goodbye
+

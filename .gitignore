@@ -1,0 +1,9 @@
+# Rasa specific
+__pycache__/
+*.pyc
+*.pyo
+data/nlu.md
+models/
+*.log
+*.db
+*.sqlite

@@ -1,0 +1,13 @@
+{
+  "0": "ask_question",
+  "1": "chapter_request",
+  "2": "fallback",
+  "3": "goodbye",
+  "4": "greet",
+  "5": "list_chapters",
+  "6": "next_topic",
+  "7": "quiz_answer",
+  "8": "quiz_request",
+  "9": "topic_explain",
+  "10": "topics_request"
+}

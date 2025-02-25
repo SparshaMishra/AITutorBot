@@ -1,0 +1,46 @@
+version: "3.1"
+language: "en"
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 200
+    batch_size: [64, 128]
+    entity_recognition: True
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 150
+  - name: FallbackClassifier
+    threshold: 0.2
+    ambiguity_threshold: 0.1
+
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+
+assistant_id: "science_tutor_bot"
+
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+responses:
+  utter_greet:
+    - text: "Hello! Welcome to your science tutor. I can help you learn chapters, explore topics, or take a quiz. What would you like to do?"
+
+  utter_ask_next_action:
+    - text: "Would you like to continue with another topic, take a quiz, or explore a new chapter? Please reply with 'Topic', 'Quiz', or 'Chapter'."
+
+  utter_quiz_next_question:
+    - text: "Here is your next question:"
+
+  utter_quiz_end:
+    - text: "Great job! You've completed the quiz. Would you like to review any topic or start another quiz?"
